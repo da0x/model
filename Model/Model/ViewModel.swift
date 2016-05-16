@@ -17,10 +17,18 @@ public class ViewModel {
     private weak var delegate : ViewModelDelegate?
     
     init(viewModelDelegate: ViewModelDelegate, models: [Model]){
-        // ..
-        // Listener().. etc
         
         delegate = viewModelDelegate
-        print("\(models)")
+        
+        for model in models {
+            
+            let viewModelID = String(self.dynamicType)
+            let modelID = String(model.dynamicType)
+            
+            // create listerner for modelID.
+            // ..
+            // Listener().. etc
+            print(viewModelID + " -> " + modelID)
+        }
     }
 }
