@@ -8,10 +8,11 @@
 
 import Foundation
 
-public class Model {
-    
+public protocol Model { }
+
+extension Model {
     func key() -> String {
-        return "\(Model.self)"
+        return "\(self.dynamicType)"
     }
 }
 

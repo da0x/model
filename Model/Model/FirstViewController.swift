@@ -8,36 +8,49 @@
 
 import UIKit
 
-class FirstModel : Model {
+struct FirstModel : Model {
+    var text: String
     
-    
+    init(text: String = "Initially loaded by FirstViewController.") {
+        self.text = text
+    }
 }
 
 class FirstViewModel : ViewModel {
     
-    init(viewModelDelegate: ViewModelDelegate){
-        super.init(viewModelDelegate:viewModelDelegate, models : [FirstModel()])
+    var formattedText : String {
+        return "FirstViewModel: \(self.model?.text)"
+    }
+    
+    var model : FirstModel?
+    
+    init(viewModelDelegate:ViewModelDelegate){
+        super.init(
+            viewModelDelegate: viewModelDelegate,
+            models : [SecondModel.self,FirstModel.self] )
     }
 }
 
 class FirstViewController: UIViewController {
-
+    
     private var viewModel : FirstViewModel?
     
+    @IBOutlet weak var dataLoadedText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel = FirstViewModel(viewModelDelegate:self)
+        viewModel = FirstViewModel(viewModelDelegate: self)
+    }
+    
+    @IBAction func loadDataFromServices(sender: AnyObject) {
+        FakeServiceDataLoader.firstModelServiceCall()
     }
 }
 
 
 extension FirstViewController : ViewModelDelegate {
-    func viewModelUpdated(viewModel: ViewModel) {
-        if viewModel is FirstViewModel {
-            
-           // ...
-        }
+    
+    func viewModelUpdated() {
+        dataLoadedText.text = viewModel?.formattedText
     }
 }
 

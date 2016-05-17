@@ -9,14 +9,15 @@
 import Foundation
 
 public protocol ViewModelDelegate : class {
-    func viewModelUpdated( viewModel : ViewModel )
+    func viewModelUpdated()
 }
 
 public class ViewModel {
     
     private weak var delegate : ViewModelDelegate?
     
-    init(viewModelDelegate: ViewModelDelegate, models: [Model]){
+    //In sub-classes, make sure to declare each model that your ViewModel needs to be updated with.
+    init(viewModelDelegate: ViewModelDelegate, models: [Model.Type]){
         
         delegate = viewModelDelegate
         

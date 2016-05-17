@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		441E9B091CE63A8A0070DC43 /* WeakRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E9B081CE63A8A0070DC43 /* WeakRef.swift */; };
+		44D874231CEA92A4000D78EA /* FakeServiceDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D874221CEA92A4000D78EA /* FakeServiceDataLoader.swift */; };
 		4F7D3D521CE6386000091CC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D511CE6386000091CC3 /* AppDelegate.swift */; };
 		4F7D3D541CE6386000091CC3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D531CE6386000091CC3 /* FirstViewController.swift */; };
 		4F7D3D561CE6386000091CC3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D551CE6386000091CC3 /* SecondViewController.swift */; };
@@ -19,7 +20,7 @@
 		4F7D3D761CE638A900091CC3 /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D751CE638A900091CC3 /* Listener.swift */; };
 		4F7D3D781CE638C500091CC3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D771CE638C500091CC3 /* ViewModel.swift */; };
 		4F7D3D7A1CE6390700091CC3 /* ListenerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D791CE6390700091CC3 /* ListenerGroup.swift */; };
-		4F7D3D7C1CE6392000091CC3 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D7B1CE6392000091CC3 /* Notifier.swift */; };
+		4F7D3D7C1CE6392000091CC3 /* ModelNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D7B1CE6392000091CC3 /* ModelNotifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		441E9B081CE63A8A0070DC43 /* WeakRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakRef.swift; sourceTree = "<group>"; };
+		44D874221CEA92A4000D78EA /* FakeServiceDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeServiceDataLoader.swift; sourceTree = "<group>"; };
 		4F7D3D4E1CE6386000091CC3 /* Model.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Model.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F7D3D511CE6386000091CC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F7D3D531CE6386000091CC3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		4F7D3D751CE638A900091CC3 /* Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
 		4F7D3D771CE638C500091CC3 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4F7D3D791CE6390700091CC3 /* ListenerGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenerGroup.swift; sourceTree = "<group>"; };
-		4F7D3D7B1CE6392000091CC3 /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		4F7D3D7B1CE6392000091CC3 /* ModelNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelNotifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +104,9 @@
 				4F7D3D751CE638A900091CC3 /* Listener.swift */,
 				4F7D3D771CE638C500091CC3 /* ViewModel.swift */,
 				4F7D3D791CE6390700091CC3 /* ListenerGroup.swift */,
-				4F7D3D7B1CE6392000091CC3 /* Notifier.swift */,
+				4F7D3D7B1CE6392000091CC3 /* ModelNotifier.swift */,
 				441E9B081CE63A8A0070DC43 /* WeakRef.swift */,
+				44D874221CEA92A4000D78EA /* FakeServiceDataLoader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,13 +222,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F7D3D741CE6388700091CC3 /* Model.swift in Sources */,
+				44D874231CEA92A4000D78EA /* FakeServiceDataLoader.swift in Sources */,
 				4F7D3D561CE6386000091CC3 /* SecondViewController.swift in Sources */,
 				4F7D3D521CE6386000091CC3 /* AppDelegate.swift in Sources */,
 				4F7D3D761CE638A900091CC3 /* Listener.swift in Sources */,
 				4F7D3D781CE638C500091CC3 /* ViewModel.swift in Sources */,
 				4F7D3D7A1CE6390700091CC3 /* ListenerGroup.swift in Sources */,
 				4F7D3D541CE6386000091CC3 /* FirstViewController.swift in Sources */,
-				4F7D3D7C1CE6392000091CC3 /* Notifier.swift in Sources */,
+				4F7D3D7C1CE6392000091CC3 /* ModelNotifier.swift in Sources */,
 				441E9B091CE63A8A0070DC43 /* WeakRef.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

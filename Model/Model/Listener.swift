@@ -14,7 +14,7 @@ protocol ListenerDelegate : class{
 
 class Listener {
     private weak var interested : ListenerDelegate?
-    private weak var group : ListenerGroup! //TODO: Should this be weak?
+    private var group : ListenerGroup!
     
     init(group: ListenerGroup!, interested: ListenerDelegate) {
         self.interested = interested
