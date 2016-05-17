@@ -21,7 +21,6 @@
 		4F7D3D781CE638C500091CC3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D771CE638C500091CC3 /* ViewModel.swift */; };
 		4F7D3D7A1CE6390700091CC3 /* ListenerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D791CE6390700091CC3 /* ListenerGroup.swift */; };
 		4F7D3D7C1CE6392000091CC3 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D3D7B1CE6392000091CC3 /* Notifier.swift */; };
-		4FB50AC71CEB7D9000C40BCF /* Uniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB50AC61CEB7D9000C40BCF /* Uniform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +52,6 @@
 		4F7D3D771CE638C500091CC3 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4F7D3D791CE6390700091CC3 /* ListenerGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenerGroup.swift; sourceTree = "<group>"; };
 		4F7D3D7B1CE6392000091CC3 /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
-		4FB50AC61CEB7D9000C40BCF /* Uniform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uniform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +118,6 @@
 			children = (
 				4F7D3D731CE6388700091CC3 /* Model.swift */,
 				4F7D3D771CE638C500091CC3 /* ViewModel.swift */,
-				4FB50AC61CEB7D9000C40BCF /* Uniform.swift */,
 			);
 			name = Public;
 			sourceTree = "<group>";
@@ -243,7 +240,6 @@
 				4F7D3D741CE6388700091CC3 /* Model.swift in Sources */,
 				44D874231CEA92A4000D78EA /* FakeServiceDataLoader.swift in Sources */,
 				4F7D3D561CE6386000091CC3 /* SecondViewController.swift in Sources */,
-				4FB50AC71CEB7D9000C40BCF /* Uniform.swift in Sources */,
 				4F7D3D521CE6386000091CC3 /* AppDelegate.swift in Sources */,
 				4F7D3D761CE638A900091CC3 /* Listener.swift in Sources */,
 				4F7D3D781CE638C500091CC3 /* ViewModel.swift in Sources */,
