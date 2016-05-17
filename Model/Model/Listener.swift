@@ -8,22 +8,22 @@
 
 import Foundation
 
-protocol ListenerDelegate : class{
+public protocol ListenerDelegate : class{
     func newModel(model: Model)
 }
 
-class Listener {
+public class Listener {
     private weak var interested : ListenerDelegate?
-    private var group : ListenerGroup!
+    private var group : ListenerGroup?
     
-    init(group: ListenerGroup!, interested: ListenerDelegate) {
+    internal init(group: ListenerGroup?, interested: ListenerDelegate) {
         self.interested = interested
         self.group = group
     }
     
-    func newModel(model: Model) {
+    internal func newModel(model: Model) {
         interested?.newModel(model)
     }
     
-    deinit { group.remove(self) }
+    deinit { group?.remove(self) }
 }

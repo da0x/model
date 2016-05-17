@@ -14,5 +14,9 @@ extension Model {
     func key() -> String {
         return "\(self.dynamicType)"
     }
+    
+    static func key() -> String {
+        return "\(self)"
+    }
 }
 

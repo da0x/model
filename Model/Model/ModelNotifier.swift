@@ -8,41 +8,40 @@
 
 import Foundation
 
-class ModelNotifier {
+public class ModelNotifier {
     
     static let sharedInstance = ModelNotifier()
     
     private var listenerGroups = [String : WeakRef<ListenerGroup>]()
     
-    func notify(keyForListeners: String, newModel model: Model) {
-        listenerGroups[keyForListeners]?.reference?.notify(newModel: model)
+    public func notify(newModel model: Model) {
+        listenerGroups[model.key()]?.reference?.notify(newModel: model)
     }
     
-    func addListener(
-        listener: Listener,
-        forModelIdentifier modelIdentifier: String) {
+    public func addListenerDelegate(forModelType modelType: Model.Type, delegate: ListenerDelegate) {
         
-        if let group = listenerGroups[modelIdentifier]?.reference {
-            group.add(listener)
+        if let group = listenerGroups["\(modelType)"]?.reference {
+            group.add(Listener(group: group, interested: delegate))
         } else {
-            listenerGroups[modelIdentifier] = initWeakListenerGroup(listener,
-                modelIdentifier:  modelIdentifier)
+            listenerGroups["\(modelType)"] = initWeakListenerGroup(delegate,
+                modelTypeString:  "\(modelType)")
         }
     }
     
+    
+    internal func remove(listenerGroup : ListenerGroup) {
+        listenerGroups.removeValueForKey(listenerGroup.key)
+    }
+    
     private func initWeakListenerGroup(
-        listener: Listener,
-        modelIdentifier: String)
+        listenerDelegate: ListenerDelegate,
+        modelTypeString: String)
         -> WeakRef<ListenerGroup> {
             
         let modelListenerGroup = ListenerGroup(
-            firstModelListener: listener,
-            key: modelIdentifier)
+            firstModelListenerDelegate: listenerDelegate,
+            key: modelTypeString)
             
         return WeakRef<ListenerGroup>(ref: modelListenerGroup)
-    }
-    
-    func remove(listenerGroup : ListenerGroup) {
-        listenerGroups.removeValueForKey(listenerGroup.key)
     }
 }

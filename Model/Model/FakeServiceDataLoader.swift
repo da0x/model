@@ -21,14 +21,14 @@ class FakeServiceDataLoader {
     static func firstModelServiceCall(){
         makeDelay {
             let fakelyReturnedData = FirstModel(text: "Service updated the First Model")
-            Notifier.sharedInstance.notify(newModel: fakelyReturnedData)
+            ModelNotifier.sharedInstance.notify(newModel: fakelyReturnedData)
         }
     }
     
     static func secondModelServiceCall() {
         makeDelay {
             let fakelyReturnedData = SecondModel(text: "Service updated the Second Model")
-            Notifier.sharedInstance.notify(newModel: fakelyReturnedData)
+            ModelNotifier.sharedInstance.notify(newModel: fakelyReturnedData)
         }
     }
 }

@@ -16,7 +16,7 @@ struct FirstModel : Model {
     }
 }
 
-class FirstViewModel : ViewModel {
+class FirstViewModel : DefaultViewModel {
     
     var formattedText : String {
         return "FirstViewModel: \(self.model?.text)"
@@ -27,7 +27,7 @@ class FirstViewModel : ViewModel {
     init(viewModelDelegate:ViewModelDelegate){
         super.init(
             viewModelDelegate: viewModelDelegate,
-            models : [SecondModel.self,FirstModel.self] )
+            modelTypes : [FirstModel.self] )
     }
 }
 
@@ -41,8 +41,12 @@ class FirstViewController: UIViewController {
         viewModel = FirstViewModel(viewModelDelegate: self)
     }
     
-    @IBAction func loadDataFromServices(sender: AnyObject) {
+    @IBAction func loadFirstModelDataFromServices(sender: AnyObject) {
         FakeServiceDataLoader.firstModelServiceCall()
+    }
+    
+    @IBAction func loadSecondModelDataFromServices(sender: AnyObject) {
+        FakeServiceDataLoader.secondModelServiceCall()
     }
 }
 

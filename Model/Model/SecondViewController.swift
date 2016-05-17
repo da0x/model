@@ -16,32 +16,46 @@ struct SecondModel : Model {
     }
 }
 
-class SecondViewModel : ViewModel {
+class SecondViewModel : DefaultViewModel {
     
-    var formattedText : String {
-        return "SecondViewModel: \(self.model?.text)"
+    var formattedFirstDataModelText : String {
+        return "formatted by SecondViewModel: \(firstModel?.text)"
     }
     
-    var model : SecondModel?
+    var formattedSecondDataModelText : String {
+        return "formatted by SecondViewModel: \(secondModel?.text)"
+    }
+    
+    var firstModel : FirstModel? {
+        return models[FirstModel.key()] as? FirstModel
+    }
+    
+    var secondModel : SecondModel? {
+        return models[SecondModel.key()] as? SecondModel
+    }
     
     init(viewModelDelegate:ViewModelDelegate){
         super.init(
             viewModelDelegate: viewModelDelegate,
-            models : [SecondModel.self,FirstModel.self] )
+            modelTypes : [SecondModel.self,FirstModel.self] )
     }
 }
 
 class SecondViewController: UIViewController {
 
     private var viewModel : SecondViewModel?
-    
-    @IBOutlet weak var dataLoadedText: UILabel!
+    @IBOutlet weak var firstModelDataLoadedText: UILabel!
+    @IBOutlet weak var secondModelDataLoadedText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SecondViewModel(viewModelDelegate: self)
     }
     
-    @IBAction func loadDataFromServices(sender: AnyObject) {
+    @IBAction func loadFirstModelDataFromServices(sender: AnyObject) {
+        FakeServiceDataLoader.firstModelServiceCall()
+    }
+    
+    @IBAction func loadSecondModelDataFromServices(sender: AnyObject) {
         FakeServiceDataLoader.secondModelServiceCall()
     }
 }
@@ -50,6 +64,7 @@ class SecondViewController: UIViewController {
 extension SecondViewController : ViewModelDelegate {
     
     func viewModelUpdated() {
-        dataLoadedText.text = viewModel?.formattedText
+        firstModelDataLoadedText.text = viewModel?.formattedFirstDataModelText
+        secondModelDataLoadedText.text = viewModel?.formattedSecondDataModelText
     }
 }

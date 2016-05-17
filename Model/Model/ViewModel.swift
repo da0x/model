@@ -12,24 +12,24 @@ public protocol ViewModelDelegate : class {
     func viewModelUpdated()
 }
 
-public class ViewModel {
+protocol ViewModel : ListenerDelegate {
+    var delegate : ViewModelDelegate? { get }
     
-    private weak var delegate : ViewModelDelegate?
-    
-    //In sub-classes, make sure to declare each model that your ViewModel needs to be updated with.
-    init(viewModelDelegate: ViewModelDelegate, models: [Model.Type]){
-        
+    func newModel(model: Model)
+}
+
+class DefaultViewModel : ViewModel {
+    private(set) var delegate : ViewModelDelegate?
+    private(set) var models : [String : Model]
+    init(viewModelDelegate: ViewModelDelegate, modelTypes: [Model.Type]){
         delegate = viewModelDelegate
-        
-        for model in models {
-            
-            let viewModelID = String(self.dynamicType)
-            let modelID = String(model.dynamicType)
-            
-            // create listerner for modelID.
-            // ..
-            // Listener().. etc
-            print(viewModelID + " -> " + modelID)
+        self.models = [:]
+        for model in modelTypes {
+            ModelNotifier.sharedInstance.addListenerDelegate(forModelType: model, delegate: self)
         }
+    }
+    
+    func newModel(model: Model) {
+        models[model.key()] = model
     }
 }

@@ -1,4 +1,4 @@
-//
+//3
 //  ListenerGroup.swift
 //  Model
 //
@@ -12,13 +12,14 @@ class ListenerGroup {
     var refs : [WeakRef<Listener>]
     let key  : String
     
-    init(firstModelListener: Listener, key: String) {
-        refs = [WeakRef<Listener>(ref: firstModelListener)]
+    init(firstModelListenerDelegate: ListenerDelegate, key: String) {
+        self.refs = []
         self.key = key
+        refs.append(WeakRef<Listener>(ref: Listener(group: self, interested: firstModelListenerDelegate)))
     }
     
-    func add(ModelListenerToAdd: Listener) {
-        refs.append(WeakRef<Listener>(ref: ModelListenerToAdd))
+    func add(modelListenerToAdd: Listener) {
+        refs.append(WeakRef<Listener>(ref: modelListenerToAdd))
     }
     
     func notify(newModel model: Model) {
@@ -29,6 +30,6 @@ class ListenerGroup {
         refs = refs.filter{ $0.reference !== modelListenerToRemove }
     }
     
-    deinit { Notifier.sharedInstance.remove(self)}
+    deinit { ModelNotifier.sharedInstance.remove(self)}
 }
 
