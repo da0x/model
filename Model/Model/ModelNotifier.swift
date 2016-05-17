@@ -45,3 +45,4 @@ public class ModelNotifier {
         listenerGroups.removeValueForKey(listenerGroup.key)
     }
 }
+
