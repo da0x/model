@@ -14,7 +14,12 @@ public protocol ListenerDelegate : class{
 
 public class Listener {
     private weak var interested : ListenerDelegate?
-    private var group : ListenerGroup?
+    internal var group : ListenerGroup?
+    
+    internal init(interested: ListenerDelegate, forModel model: Model.Type) {
+        self.interested = interested
+        ModelNotifier.sharedInstance.addListener(self, forModelType: model)
+    }
     
     internal init(group: ListenerGroup?, interested: ListenerDelegate) {
         self.interested = interested

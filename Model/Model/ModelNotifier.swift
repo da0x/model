@@ -18,27 +18,29 @@ public class ModelNotifier {
         listenerGroups[model.key()]?.reference?.notify(newModel: model)
     }
     
-    public func addListenerWithDelegate(forModelType modelType: Model.Type, listenerDelegate: ListenerDelegate) -> Listener {
+    internal func addListener(listener: Listener, forModelType modelType: Model.Type){
         let modelTypeKey = "\(modelType)"
+        let group = groupFor(modelTypeKey)
+        
+        group.add(listener)
+        listener.group = group
+    }
+    
+    private func groupFor(modelTypeKey: String) -> ListenerGroup {
         if let group = listenerGroups[modelTypeKey]?.reference {
-            return addListenerToExistingGroup(group, newListenerDelegate: listenerDelegate)
+            return group
         } else {
-            return addListenerToNewGroup(listenerDelegate, forModelTypeKey: modelTypeKey)
+            let group = ListenerGroup(key: modelTypeKey)
+            listenerGroups[modelTypeKey] = WeakRef<ListenerGroup>(ref: group)
+            return group
         }
     }
     
-    private func addListenerToExistingGroup(group: ListenerGroup, newListenerDelegate: ListenerDelegate) -> Listener{
-        let listener = Listener(group: group, interested: newListenerDelegate)
-        group.add(listener)
-        return listener
-    }
-    
-    private func addListenerToNewGroup(newListenerDelegate: ListenerDelegate, forModelTypeKey modelTypeKey: String) -> Listener {
+    private func addListenerToNewGroup(newListener: Listener, forModelTypeKey modelTypeKey: String){
         let group = ListenerGroup(key: modelTypeKey)
-        let listener = Listener(group: group, interested: newListenerDelegate)
+        newListener.group = group
         listenerGroups[modelTypeKey] = WeakRef<ListenerGroup>(ref: group)
-        group.add(listener)
-        return listener
+        group.add(newListener)
     }
     
     internal func remove(listenerGroup : ListenerGroup) {
