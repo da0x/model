@@ -19,11 +19,11 @@ struct SecondModel : Model {
 class SecondViewModel : DefaultViewModel {
     
     var formattedFirstDataModelText : String {
-        return "formatted by SecondViewModel: \(firstModel?.text)"
+        return "\(firstModel?.text ?? "")"
     }
     
     var formattedSecondDataModelText : String {
-        return "formatted by SecondViewModel: \(secondModel?.text)"
+        return "\(secondModel?.text ?? "")"
     }
     
     var firstModel : FirstModel? {
@@ -52,11 +52,11 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func loadFirstModelDataFromServices(sender: AnyObject) {
-        FakeServiceDataLoader.firstModelServiceCall()
+        FakeServiceDataLoader.firstModelServiceCall("Scott")
     }
     
     @IBAction func loadSecondModelDataFromServices(sender: AnyObject) {
-        FakeServiceDataLoader.secondModelServiceCall()
+        FakeServiceDataLoader.secondModelServiceCall("Scott")
     }
 }
 

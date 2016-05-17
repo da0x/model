@@ -17,31 +17,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="158" height="42"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Daher's View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                <rect key="frame" x="195" y="279" width="211" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="195" height="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daher and Scott are alright dudes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
+                                <rect key="frame" x="192" y="329" width="218" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZQ-Uo-MGP">
-                                <rect key="frame" x="198" y="362" width="205" height="30"/>
-                                <state key="normal" title="Load First Model from Service"/>
+                                <rect key="frame" x="196" y="402" width="211" height="30"/>
+                                <state key="normal" title="Convince Brad you're the best!"/>
                                 <connections>
                                     <action selector="loadFirstModelDataFromServices:" destination="9pv-A4-QxB" eventType="touchUpInside" id="LLv-EG-crp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brad's Opinion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bn-SM-Rx1">
+                                <rect key="frame" x="64" y="327" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can't read Susan. Who knows what her opinion is?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYf-Uo-BpQ">
+                                <rect key="frame" x="194" y="358" width="351" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="351" id="kIM-57-adx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Susan's Opinion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw6-jY-HSp">
+                                <rect key="frame" x="53" y="356" width="128" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9X5-Vv-8H1">
-                                <rect key="frame" x="187" y="414" width="227" height="30"/>
-                                <state key="normal" title="Load Second Model from Service"/>
+                                <rect key="frame" x="191" y="454" width="221" height="30"/>
+                                <state key="normal" title="Convince Susan you're the best!"/>
                                 <connections>
-                                    <action selector="loadFirstModelDataFromServices:" destination="9pv-A4-QxB" eventType="touchUpInside" id="sJR-Od-97B"/>
                                     <action selector="loadSecondModelDataFromServices:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Ans-jS-ReO"/>
                                 </connections>
                             </button>
@@ -49,14 +69,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9X5-Vv-8H1" firstAttribute="top" secondItem="0ZQ-Uo-MGP" secondAttribute="bottom" constant="22" id="04w-5L-VjD"/>
+                            <constraint firstItem="zw6-jY-HSp" firstAttribute="top" secondItem="1bn-SM-Rx1" secondAttribute="bottom" constant="8" id="2zo-Yr-6bX"/>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
+                            <constraint firstItem="A5M-7J-77L" firstAttribute="leading" secondItem="1bn-SM-Rx1" secondAttribute="trailing" constant="11" id="6EB-lS-e29"/>
                             <constraint firstItem="9X5-Vv-8H1" firstAttribute="centerX" secondItem="0ZQ-Uo-MGP" secondAttribute="centerX" id="9nt-dZ-1eN"/>
+                            <constraint firstItem="UYf-Uo-BpQ" firstAttribute="leading" secondItem="zw6-jY-HSp" secondAttribute="trailing" constant="13" id="Cxi-6e-zcR"/>
+                            <constraint firstItem="UYf-Uo-BpQ" firstAttribute="leading" secondItem="zw6-jY-HSp" secondAttribute="trailing" constant="11" id="H6t-xj-gaE"/>
+                            <constraint firstItem="1bn-SM-Rx1" firstAttribute="centerY" secondItem="A5M-7J-77L" secondAttribute="centerY" id="MSI-OW-nuj"/>
+                            <constraint firstItem="zw6-jY-HSp" firstAttribute="centerY" secondItem="UYf-Uo-BpQ" secondAttribute="centerY" id="a2g-0X-DFR"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
                             <constraint firstItem="0ZQ-Uo-MGP" firstAttribute="top" secondItem="A5M-7J-77L" secondAttribute="bottom" constant="16" id="e1C-3W-5IB"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                             <constraint firstItem="0ZQ-Uo-MGP" firstAttribute="centerX" secondItem="A5M-7J-77L" secondAttribute="centerX" id="f8n-I6-nt1"/>
+                            <constraint firstItem="zw6-jY-HSp" firstAttribute="trailing" secondItem="1bn-SM-Rx1" secondAttribute="trailing" id="lKD-4J-Cwn"/>
+                            <constraint firstItem="0ZQ-Uo-MGP" firstAttribute="top" secondItem="UYf-Uo-BpQ" secondAttribute="bottom" constant="27" id="rL0-Kv-Qdy"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="H6t-xj-gaE"/>
+                                <exclude reference="e1C-3W-5IB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
@@ -79,61 +113,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="210" height="42"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Scott's View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
+                                <rect key="frame" x="203" y="279" width="195" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="193" y="341" width="215" height="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daher and Scott are alright dudes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
+                                <rect key="frame" x="192" y="344" width="218" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AnB-Ct-oBv">
-                                <rect key="frame" x="183" y="470" width="235" height="30"/>
-                                <state key="normal" title="Load Second Model from Services"/>
+                                <rect key="frame" x="190" y="457" width="221" height="30"/>
+                                <state key="normal" title="Convince Susan you're the best!"/>
                                 <connections>
                                     <action selector="loadSecondModelDataFromServices:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="wKC-J2-kLg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cf1-a7-6mx">
-                                <rect key="frame" x="192" y="403" width="216" height="30"/>
-                                <state key="normal" title="Load First Model From Services"/>
+                                <rect key="frame" x="195" y="397" width="211" height="30"/>
+                                <state key="normal" title="Convince Brad you're the best!"/>
                                 <connections>
                                     <action selector="loadFirstModelDataFromServices:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="x6r-nW-O5Z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plD-A2-dhe">
-                                <rect key="frame" x="193" y="321" width="215" height="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daher and Scott are alright dudes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plD-A2-dhe">
+                                <rect key="frame" x="192" y="321" width="218" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brad's Opinion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO5-R2-b99">
+                                <rect key="frame" x="67" y="319" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Susan's Opinion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61g-6p-GMa">
+                                <rect key="frame" x="56" y="342" width="128" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NDk-cv-Gan" firstAttribute="leading" secondItem="61g-6p-GMa" secondAttribute="trailing" constant="8" id="0Pg-hb-ErT"/>
                             <constraint firstItem="plD-A2-dhe" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" id="4T0-u9-DCp"/>
                             <constraint firstItem="AnB-Ct-oBv" firstAttribute="top" secondItem="cf1-a7-6mx" secondAttribute="bottom" constant="-2" id="5MH-Fu-tQV"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
                             <constraint firstItem="cf1-a7-6mx" firstAttribute="top" secondItem="NDk-cv-Gan" secondAttribute="bottom" constant="8" id="RAh-y6-BNB"/>
                             <constraint firstItem="plD-A2-dhe" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="ZWc-dH-vbZ"/>
-                            <constraint firstItem="AnB-Ct-oBv" firstAttribute="top" secondItem="cf1-a7-6mx" secondAttribute="bottom" constant="37" id="bui-jh-w4U"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="plD-A2-dhe" secondAttribute="bottom" constant="3" id="f4Z-vu-Wny"/>
+                            <constraint firstItem="plD-A2-dhe" firstAttribute="leading" secondItem="nO5-R2-b99" secondAttribute="trailing" constant="8" id="alo-rF-Bnr"/>
+                            <constraint firstItem="61g-6p-GMa" firstAttribute="top" secondItem="nO5-R2-b99" secondAttribute="bottom" constant="2" id="btk-PM-V3B"/>
+                            <constraint firstItem="AnB-Ct-oBv" firstAttribute="top" secondItem="cf1-a7-6mx" secondAttribute="bottom" constant="30" id="bui-jh-w4U"/>
+                            <constraint firstItem="cf1-a7-6mx" firstAttribute="top" secondItem="NDk-cv-Gan" secondAttribute="bottom" constant="36" id="cLl-Pf-vMK"/>
+                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="plD-A2-dhe" secondAttribute="bottom" constant="6" id="f4Z-vu-Wny"/>
                             <constraint firstItem="AnB-Ct-oBv" firstAttribute="centerX" secondItem="NDk-cv-Gan" secondAttribute="centerX" id="hzV-zh-gqq"/>
                             <constraint firstItem="cf1-a7-6mx" firstAttribute="top" secondItem="NDk-cv-Gan" secondAttribute="bottom" constant="45" id="jwC-N4-Bsr"/>
+                            <constraint firstItem="NDk-cv-Gan" firstAttribute="leading" secondItem="61g-6p-GMa" secondAttribute="trailing" constant="3" id="laE-3Q-DpR"/>
                             <constraint firstItem="AnB-Ct-oBv" firstAttribute="top" secondItem="NDk-cv-Gan" secondAttribute="bottom" constant="21" id="llr-Jc-Oxn"/>
+                            <constraint firstItem="nO5-R2-b99" firstAttribute="centerY" secondItem="plD-A2-dhe" secondAttribute="centerY" id="pOI-4h-BVD"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerY" secondItem="61g-6p-GMa" secondAttribute="centerY" id="rAn-1O-xM5"/>
                             <constraint firstItem="cf1-a7-6mx" firstAttribute="centerX" secondItem="NDk-cv-Gan" secondAttribute="centerX" id="vuB-Lj-4Gb"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Day-4N-Vmt"/>
+                                <exclude reference="f4Z-vu-Wny"/>
+                                <exclude reference="laE-3Q-DpR"/>
                                 <exclude reference="RAh-y6-BNB"/>
+                                <exclude reference="jwC-N4-Bsr"/>
                                 <exclude reference="5MH-Fu-tQV"/>
                                 <exclude reference="llr-Jc-Oxn"/>
                             </mask>

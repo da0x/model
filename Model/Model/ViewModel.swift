@@ -20,16 +20,20 @@ protocol ViewModel : ListenerDelegate {
 
 class DefaultViewModel : ViewModel {
     private(set) var delegate : ViewModelDelegate?
+    private(set) var listeners : [String : Listener]
     private(set) var models : [String : Model]
     init(viewModelDelegate: ViewModelDelegate, modelTypes: [Model.Type]){
         delegate = viewModelDelegate
+        self.listeners = [:]
         self.models = [:]
         for model in modelTypes {
-            ModelNotifier.sharedInstance.addListenerDelegate(forModelType: model, delegate: self)
+            listeners[model.key()] =
+                ModelNotifier.sharedInstance.addListenerWithDelegate(forModelType: model, listenerDelegate: self)
         }
     }
     
     func newModel(model: Model) {
         models[model.key()] = model
+        delegate?.viewModelUpdated()
     }
 }

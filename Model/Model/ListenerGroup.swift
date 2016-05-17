@@ -12,11 +12,16 @@ class ListenerGroup {
     var refs : [WeakRef<Listener>]
     let key  : String
     
-    init(firstModelListenerDelegate: ListenerDelegate, key: String) {
+    convenience init(firstModelListener: Listener, key: String) {
+        self.init(key: key)
+        refs.append(WeakRef<Listener>(ref: firstModelListener))
+    }
+    
+    init(key: String) {
         self.refs = []
         self.key = key
-        refs.append(WeakRef<Listener>(ref: Listener(group: self, interested: firstModelListenerDelegate)))
     }
+    
     
     func add(modelListenerToAdd: Listener) {
         refs.append(WeakRef<Listener>(ref: modelListenerToAdd))

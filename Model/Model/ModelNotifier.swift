@@ -18,30 +18,30 @@ public class ModelNotifier {
         listenerGroups[model.key()]?.reference?.notify(newModel: model)
     }
     
-    public func addListenerDelegate(forModelType modelType: Model.Type, delegate: ListenerDelegate) {
-        
-        if let group = listenerGroups["\(modelType)"]?.reference {
-            group.add(Listener(group: group, interested: delegate))
+    public func addListenerWithDelegate(forModelType modelType: Model.Type, listenerDelegate: ListenerDelegate) -> Listener {
+        let modelTypeKey = "\(modelType)"
+        if let group = listenerGroups[modelTypeKey]?.reference {
+            return addListenerToExistingGroup(group, newListenerDelegate: listenerDelegate)
         } else {
-            listenerGroups["\(modelType)"] = initWeakListenerGroup(delegate,
-                modelTypeString:  "\(modelType)")
+            return addListenerToNewGroup(listenerDelegate, forModelTypeKey: modelTypeKey)
         }
     }
     
+    private func addListenerToExistingGroup(group: ListenerGroup, newListenerDelegate: ListenerDelegate) -> Listener{
+        let listener = Listener(group: group, interested: newListenerDelegate)
+        group.add(listener)
+        return listener
+    }
+    
+    private func addListenerToNewGroup(newListenerDelegate: ListenerDelegate, forModelTypeKey modelTypeKey: String) -> Listener {
+        let group = ListenerGroup(key: modelTypeKey)
+        let listener = Listener(group: group, interested: newListenerDelegate)
+        listenerGroups[modelTypeKey] = WeakRef<ListenerGroup>(ref: group)
+        group.add(listener)
+        return listener
+    }
     
     internal func remove(listenerGroup : ListenerGroup) {
         listenerGroups.removeValueForKey(listenerGroup.key)
-    }
-    
-    private func initWeakListenerGroup(
-        listenerDelegate: ListenerDelegate,
-        modelTypeString: String)
-        -> WeakRef<ListenerGroup> {
-            
-        let modelListenerGroup = ListenerGroup(
-            firstModelListenerDelegate: listenerDelegate,
-            key: modelTypeString)
-            
-        return WeakRef<ListenerGroup>(ref: modelListenerGroup)
     }
 }
