@@ -16,7 +16,7 @@ struct FirstModel : Model {
     }
 }
 
-class FirstViewModel : DefaultViewModel {
+class FirstViewModel : ViewModel {
     
     var formattedText : String {
         return "FirstViewModel: \(self.model?.text ?? "")"

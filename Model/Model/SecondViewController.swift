@@ -16,7 +16,7 @@ struct SecondModel : Model {
     }
 }
 
-class SecondViewModel : DefaultViewModel {
+class SecondViewModel : ViewModel {
     
     var formattedFirstDataModelText : String {
         return "\(firstModel?.text ?? "")"

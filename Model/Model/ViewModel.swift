@@ -12,13 +12,13 @@ public protocol ViewModelDelegate : class {
     func viewModelUpdated()
 }
 
-protocol ViewModel : ListenerDelegate {
+protocol ViewModelProtocol : ListenerDelegate {
     var delegate : ViewModelDelegate? { get }
     
     func newModel(model: Model)
 }
 
-class DefaultViewModel : ViewModel {
+class ViewModel : ViewModelProtocol {
     private(set) var delegate : ViewModelDelegate?
     private(set) var listeners : [String : Listener]
     private(set) var models : [String : Model]
