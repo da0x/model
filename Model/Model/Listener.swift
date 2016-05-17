@@ -18,7 +18,7 @@ public class Listener {
     
     internal init(interested: ListenerDelegate, forModel model: Model.Type) {
         self.interested = interested
-        ModelNotifier.sharedInstance.addListener(self, forModelType: model)
+        Notifier.sharedInstance.addListener(self, forModelType: model)
     }
     
     internal init(group: ListenerGroup?, interested: ListenerDelegate) {

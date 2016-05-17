@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class ModelNotifier {
+public class Notifier {
     
-    static let sharedInstance = ModelNotifier()
+    static let sharedInstance = Notifier()
     
     private var listenerGroups = [String : WeakRef<ListenerGroup>]()
     

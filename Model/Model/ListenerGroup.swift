@@ -35,6 +35,6 @@ class ListenerGroup {
         refs = refs.filter{ $0.reference !== modelListenerToRemove }
     }
     
-    deinit { ModelNotifier.sharedInstance.remove(self)}
+    deinit { Notifier.sharedInstance.remove(self)}
 }
 
