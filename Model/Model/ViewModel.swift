@@ -27,8 +27,7 @@ class ViewModel : ViewModelProtocol {
         self.listeners = [:]
         self.models = [:]
         for model in modelTypes {
-            listeners[model.key()] =
-                ModelNotifier.sharedInstance.addListenerWithDelegate(forModelType: model, listenerDelegate: self)
+            listeners[model.key()] = Listener(interested: self, forModel: model)
         }
     }
     
